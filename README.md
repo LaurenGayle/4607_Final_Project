@@ -6,3 +6,13 @@ The goal of this project is to design and implement a sound-reactive speaker tha
 ## Components
 ![Block Diagram of Project Components](component_layout.png)
 
+## Current Layout
+### Test Scripts
+Currently, we are testing the components of the speaker individually
+- Speaker_Test
+- LCD_Test
+- Web_Server_Test
+#### Tests TODO:
+- Bluetooth_Test
+- LED_Matrix_Test
+

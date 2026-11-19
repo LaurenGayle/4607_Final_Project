@@ -28,36 +28,36 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(Testing_LCD C CXX ASM)
+project(LCD_Test C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Testing_LCD Testing_LCD.c )
+add_executable(LCD_Test LCD_Test.c )
 
-pico_set_program_name(Testing_LCD "Testing_LCD")
-pico_set_program_version(Testing_LCD "0.1")
+pico_set_program_name(LCD_Test "LCD_Test")
+pico_set_program_version(LCD_Test "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(Testing_LCD 0)
-pico_enable_stdio_usb(Testing_LCD 1)
+pico_enable_stdio_uart(LCD_Test 0)
+pico_enable_stdio_usb(LCD_Test 1)
 
 # Add the standard library to the build
-target_link_libraries(Testing_LCD
+target_link_libraries(LCD_Test
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(Testing_LCD PRIVATE
+target_include_directories(LCD_Test PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(Testing_LCD 
+target_link_libraries(LCD_Test 
         hardware_i2c
         
         )
 
-pico_add_extra_outputs(Testing_LCD)
+pico_add_extra_outputs(LCD_Test)
 

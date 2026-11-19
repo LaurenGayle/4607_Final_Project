@@ -321,7 +321,7 @@ int main(void) {
         sleep_ms(100);
     }
     sleep_ms(200);
-    printf("\n=== Testing_LCD starting ===\n");
+    printf("\n=== LCD_Test starting ===\n");
 
     lcd_init();     /* I2C bus setup + scan */
     lcd_reset();    /* HD44780 init sequence */
