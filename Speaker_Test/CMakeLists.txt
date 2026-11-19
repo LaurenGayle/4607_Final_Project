@@ -28,6 +28,10 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
+# Pull in Pico Extras for the I2S audio libraries
+set(PICO_EXTRAS_PATH "${PICO_SDK_PATH}/../pico-extras" CACHE PATH "Path to Pico Extras")
+include(${PICO_EXTRAS_PATH}/external/pico_extras_import.cmake)
+
 project(Speaker_Test C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
@@ -46,7 +50,8 @@ pico_enable_stdio_usb(Speaker_Test 1)
 
 # Add the standard library to the build
 target_link_libraries(Speaker_Test
-        pico_stdlib)
+        pico_stdlib
+        pico_audio_i2s)
 
 # Add the standard include files to the build
 target_include_directories(Speaker_Test PRIVATE
