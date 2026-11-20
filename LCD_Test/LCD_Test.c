@@ -326,10 +326,6 @@ int main(void) {
     lcd_init();     /* I2C bus setup + scan */
     lcd_reset();    /* HD44780 init sequence */
 
-#if PIN_FINDER
-    pin_finder_init();
-#endif
-
     button_t btn_up, btn_down, btn_mode;
     button_init(&btn_up, BTN_VOL_UP_PIN);
     button_init(&btn_down, BTN_VOL_DOWN_PIN);
@@ -382,10 +378,6 @@ int main(void) {
             }
             next_heartbeat = make_timeout_time_ms(5000);
         }
-
-#if PIN_FINDER
-        pin_finder_poll();
-#endif
 
         if (button_was_pressed(&btn_mode)) {
             mode = (mode % NUM_MODES) + 1;          /* 1 -> 2 -> 3 -> 1 */

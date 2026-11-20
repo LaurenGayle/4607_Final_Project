@@ -11,10 +11,12 @@ The goal of this project is to design and implement a sound-reactive speaker tha
 Currently, we are testing the components of the speaker individually
 - *Speaker_Test* - Plays tones from each speaker to ensure that they can be controlled by the Pico individually and together. (**Working**)
 - *LCD_Test* - Use the buttons to display Mode and Volume on the LCD screen connected to an I2C breakout board. (**Working**)
+- *Bluetooth_Test* - connect to the pico via bluetooth and play a audio file from the speakers. (**Working**)
+- *LED_Matrix_Test* - flash a pattern on the LED matrix (**Working**)
 - *Web_Server_Test* - Turn off and on the onboard LED via a python webapp. (**In progress**)
-- *Bluetooth_Test* - connect to the pico via bluetooth and play a audio file from the speakers. (**TODO**)
-- *LED_Matrix_Test* - flash a pattern on the LED matrix (**TODO**)
-### Demo Script (TODO)
-- Once the tests are complete, they will be combined into one large script for demoing the functionality of the I/O.
+
+### Demo Script (In Progress)
+- Currently combines all components sans the Web App
+    - Both the web app and avrcp for song title display need worked on.
 ### Final Script (TODO)
 - This will be the adapted from the demo script, cleaned and organized for the final product.
